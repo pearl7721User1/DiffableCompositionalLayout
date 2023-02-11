@@ -55,8 +55,6 @@ class DiffableAlbumViewController: UIViewController {
             self.collectionView.reloadData()
         }
         
-        var snapshot2 = NSDiffableDataSourceSnapshot<CellSectionKind, AlbumListDataSource>()
-        snapshot2.appendItems(PhotoController.shared.allAlbums)
     }
     
     private func configureDataSource() {
@@ -69,7 +67,7 @@ class DiffableAlbumViewController: UIViewController {
                 let album = PhotoController.shared.allAlbums[indexPath.item]
                 
                 if let thumbnailImageView = cell.viewWithTag(1) as? UIImageView {
-                    thumbnailImageView.scaleDownToSet(image: album.thumbnailImage)
+                    thumbnailImageView.image = album.thumbnailImage
                     
                     // rounding
                     thumbnailImageView.layer.cornerRadius = 8.0

@@ -91,7 +91,7 @@ extension AlbumViewController: UICollectionViewDataSource, UICollectionViewDeleg
             let album = PhotoController.shared.allAlbums[indexPath.item]
             
             if let thumbnailImageView = cell.viewWithTag(1) as? UIImageView {
-                thumbnailImageView.scaleDownToSet(image: album.thumbnailImage)
+                thumbnailImageView.image = album.thumbnailImage
                 
                 // rounding
                 thumbnailImageView.layer.cornerRadius = 8.0
